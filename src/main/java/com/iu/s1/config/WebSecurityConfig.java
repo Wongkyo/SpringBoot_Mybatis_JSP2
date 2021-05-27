@@ -57,6 +57,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
+				//username 파라미터를 다른 이름으로 설정
+				.usernameParameter("email")
+				//password 파라미터를 다른 이름으로 설정
+				.passwordParameter("pw")
 				//로그인페이지를 따로 만들지 않아도 기본 내장된 폼으로 이동
 				//개발자가 만든 로그인폼을 사용하려면 다음과 같이 작성
 				.loginPage("/member/login")
